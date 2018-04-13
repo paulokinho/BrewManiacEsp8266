@@ -479,7 +479,7 @@ void btnInitialize(void)
 #define BUTTON_DEBUG false
 #endif
 
-#define BUTTON_DEBUG false
+#define BUTTON_DEBUG true
 
 
 boolean _virtualButtonPressed=false;
@@ -506,22 +506,25 @@ boolean btnReadButtons(void)
 
   	unsigned char buttons=0;
 	btnPrepareRead();
-  	if (btnReadPin(ButtonUpPin) == 0)
+	if (btnReadPin(ButtonUpPin) == 0)
   	{
   		buttons |= ButtonUpMask;
   	}
   	if (btnReadPin(ButtonDownPin) == 0)
   	{
   		buttons |= ButtonDownMask;
-  	}
+  	}	
   	if (btnReadPin(ButtonEnterPin) == 0)
   	{
   		buttons |= ButtonEnterMask;
   	}
+
+	/*  
   	if (btnReadPin(ButtonStartPin) == 0)
   	{
   		buttons |= ButtonStartMask;
   	}
+	*/
 
 	if(buttons==0)
 	{

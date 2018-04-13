@@ -16,7 +16,7 @@
 #define NODEMCU_PIN_D8 15    AuxHeater
 */
 
-#define BUTTON_USE_EXT true
+#define BUTTON_USE_EXT false
 
 #define HEATER_USE_EXT false
 #define PUMP_USE_EXT false
@@ -41,9 +41,9 @@
 
 #if BUTTON_USE_EXT !=true
 #define ButtonUpPin    NODEMCU_PIN_D3
-#define ButtonDownPin   NODEMCU_PIN_D4
-#define ButtonStartPin  NODEMCU_PIN_D5
-#define ButtonEnterPin  NODEMCU_PIN_D7
+#define ButtonDownPin   3
+#define ButtonStartPin  10
+#define ButtonEnterPin  1
 #else
 
 #define ButtonUpPin    2 // P1
