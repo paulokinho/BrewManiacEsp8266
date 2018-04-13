@@ -21,6 +21,10 @@
 #define NODEMCU_PIN_D6 12
 #define NODEMCU_PIN_D7 13
 #define NODEMCU_PIN_D8 15
+#define NODEMCU_PIN_RX 3
+#define NODEMCU_PIN_TX 1
+#define NODEMCU_PIN_SD2 9
+#define NODEMCU_PIN_SD3 10
 
 /**** PIN setup ******/
 /*

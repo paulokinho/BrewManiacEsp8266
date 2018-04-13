@@ -22,7 +22,7 @@
 #define PUMP_USE_EXT false
 #define BUZZER_USE_EXT false
 
-//#define PUMP_INVERTED_LOGIC true
+#define PUMP_INVERTED_LOGIC true
 // with all address pins grounded, PCF8574 is 0x20 while pCF8574A is 0x38
 #define PCF8574_ADDRESS 0x20
 //#define PCF8574_ADDRESS 0x38
@@ -31,7 +31,7 @@
 
 #define I2C_SCL NODEMCU_PIN_D1
 #define I2C_SDA NODEMCU_PIN_D2
-#define SensorPin    NODEMCU_PIN_D6
+#define SensorPin    NODEMCU_PIN_D4
 
 
 #define AuxHeatControlPin NODEMCU_PIN_D8
@@ -41,9 +41,9 @@
 
 #if BUTTON_USE_EXT !=true
 #define ButtonUpPin    NODEMCU_PIN_D3
-#define ButtonDownPin   3
-#define ButtonStartPin  10
-#define ButtonEnterPin  1
+#define ButtonDownPin   NODEMCU_PIN_RX
+#define ButtonStartPin  NODEMCU_PIN_SD3
+#define ButtonEnterPin  NODEMCU_PIN_TX
 #else
 
 #define ButtonUpPin    2 // P1

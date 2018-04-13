@@ -518,13 +518,10 @@ boolean btnReadButtons(void)
   	{
   		buttons |= ButtonEnterMask;
   	}
-
-	/*  
   	if (btnReadPin(ButtonStartPin) == 0)
   	{
   		buttons |= ButtonStartMask;
   	}
-	*/
 
 	if(buttons==0)
 	{
@@ -1039,6 +1036,8 @@ void tpReadTemperature(void)
 #if FakeHeating
 	return;
 #endif
+	
+	Serial.println("Lendo temperatura");
 
   	if (_isConverting == false)
   	{
@@ -1095,6 +1094,10 @@ void tpReadTemperature(void)
 	if(gIsUseFahrenheit) gCurrentTemperature = C2F(gCurrentTemperature);
     //apply calibration
     gCurrentTemperature +=  gSensorCalibration; //((float)(readSetting(PS_Offset) - 50) / 10.0);
+
+	Serial.print("Temperatura: ");
+	Serial.println(gCurrentTemperature);
+
     _isConverting = false;
 }
 
