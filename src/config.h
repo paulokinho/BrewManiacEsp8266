@@ -45,7 +45,7 @@
 #endif
 
 #define UsePaddleInsteadOfPump false
-#define SecondaryHeaterSupport false
+#define SecondaryHeaterSupport true
 #define SpargeHeaterSupport false
 
 

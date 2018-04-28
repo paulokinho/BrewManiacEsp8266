@@ -9,9 +9,9 @@
 #define NODEMCU_PIN_D1 5	 [I/O]SCL // I2C
 #define NODEMCU_PIN_D2 4	 [I/O]SDA // I2C
 #define NODEMCU_PIN_D3 0
-#define NODEMCU_PIN_D4 2
+#define NODEMCU_PIN_D4 2     Sensor
 #define NODEMCU_PIN_D5 14    Pump
-#define NODEMCU_PIN_D6 12    Sensor
+#define NODEMCU_PIN_D6 12    
 #define NODEMCU_PIN_D7 13    Heater
 #define NODEMCU_PIN_D8 15    AuxHeater
 */
@@ -21,6 +21,7 @@
 #define HEATER_USE_EXT false
 #define PUMP_USE_EXT false
 #define BUZZER_USE_EXT false
+
 
 #define PUMP_INVERTED_LOGIC true
 // with all address pins grounded, PCF8574 is 0x20 while pCF8574A is 0x38
@@ -182,5 +183,9 @@ void initIOPins(void)
 	setAuxHeaterOut(LOW);
 #endif
 
+#if SecondaryHeaterSupport == true
+	pinMode (AuxHeatControlPin, OUTPUT);
+	setSecondaryHeaterOut(LOW);
+#endif
 }
 #endif
